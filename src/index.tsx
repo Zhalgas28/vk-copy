@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Layout from './components/Layout/Layout';
 import Home from './components/Pages/Home/Home';
+import Routes from './components/Routes/Routes';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,7 +11,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Layout><Home /></Layout>
+    <Routes />
   </React.StrictMode>
 );
 

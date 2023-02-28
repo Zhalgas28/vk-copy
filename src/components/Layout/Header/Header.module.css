@@ -1,0 +1,25 @@
+.header {
+  background-color: #4d6a9b;
+  width: calc(100% - 40px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.imageWrapper {
+  flex-grow: 1;
+}
+
+.login {
+  color: white;
+  text-decoration: none;
+}
+
+.login > span {
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+}

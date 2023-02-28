@@ -1,17 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Layout from './components/Layout/Layout';
-import Home from './components/Pages/Home/Home';
+import { BrowserRouter } from 'react-router-dom';
 import Routes from './components/Routes/Routes';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import * as firebase from "firebase/app";
+import { AuthProvider } from './components/Providers/AuthProvider/AuthProvider';
+import { getFirestore } from "firebase/firestore"
+
+// Initialize Firebase
+const FIREBASE = firebase.initializeApp({
+  apiKey: "AIzaSyAbxkRqn8ooiNoZ7fXZYiWkpp8vj4D82sg",
+  authDomain: "vk-copy-f740a.firebaseapp.com",
+  projectId: "vk-copy-f740a",
+  storageBucket: "vk-copy-f740a.appspot.com",
+  messagingSenderId: "735553240155",
+  appId: "1:735553240155:web:ce962010750782a4bb937e"
+});
+
+const db = getFirestore(FIREBASE)
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Routes />
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
